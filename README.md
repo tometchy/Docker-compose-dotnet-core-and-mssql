@@ -1,10 +1,8 @@
-# Docker compose Dotnet Core and MySQL example system 
+# Docker compose Dotnet Core and Microsoft SQL Server example system 
 
-Example docker-compose system, based on .NET Core project and MySQL database (accessed with _Dapper_).
+Example docker-compose system, based on .NET Core project and Microsoft SQL Server database (accessed with _Dapper_).
 
-Dotnet Dockerfile and basic Docker setup based on [SoftwareDeveloper.Blog introduction to Docker](https://www.softwaredeveloper.blog/multi-project-dotnet-core-solution-in-docker-image).
-
-Docker-compose configuration used in this example is explained line by line in [SoftwareDeveloper.Blog introduction to docker-compose](https://www.softwaredeveloper.blog/docker-compose-introduction-dotnet-core-app-composed-with-mysql-database).
+Dotnet Dockerfile and basic Docker setup based on [SoftwareDeveloper.Blog introduction to _Docker_](https://www.softwaredeveloper.blog/multi-project-dotnet-core-solution-in-docker-image) and database initialization based on [SoftwareDeveloper.Blog introduction to MS SQL Server initialized in _Docker_ container](https://www.softwaredeveloper.blog/initialize-mssql-in-docker-container).
 
 ## Docker-compose up
 if you want to see this example running, you can just type `docker-compose up` from solution directory.
@@ -36,5 +34,5 @@ If you want to see if this example system works properly, just access in your br
   }
 ]
 ```
-
-If you see empty result, wait a while and try again - maybe MyQSL database is not fully initialized yet.
+Remember to wait 90 seconds to have DB initialized, due to [the recommended way MS _SQL Server_ need to be initialized](https://www.softwaredeveloper.blog/initialize-mssql-in-docker-container).
+If you know that your PC will boot up _SQL Server_ faster than 90 seconds you can decrease this time in _run-initialization.sh_ script.
